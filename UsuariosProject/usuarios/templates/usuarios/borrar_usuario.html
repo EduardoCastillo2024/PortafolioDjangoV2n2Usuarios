@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Borrar Usuario</title>
+</head>
+<body>
+    <h1>¿Estás seguro que deseas borrar este usuario?</h1>
+    <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sí, borrar</button>
+    </form>
+    <a href="{% url 'detalle_usuario' usuario.id %}">Cancelar</a>
+</body>
+</html>
